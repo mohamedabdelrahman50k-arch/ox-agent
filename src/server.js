@@ -17,7 +17,14 @@ import { pollYouTubeComments } from './platforms/youtube.js';
 const PORT = process.env.PORT || 3000;
 
 const app = express();
-app.use(bodyParser.json());
+// Capture the raw body so Meta's X-Hub-Signature-256 can be verified.
+app.use(
+  bodyParser.json({
+    verify: (req, _res, buf) => {
+      req.rawBody = buf;
+    },
+  })
+);
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Health & stats
