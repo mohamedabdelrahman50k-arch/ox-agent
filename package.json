@@ -1,0 +1,23 @@
+{
+  "name": "ox-agent",
+  "version": "1.0.0",
+  "description": "AI Agent that auto-replies to messages and comments across all platforms and logs conversations to Google Sheets",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.20.0",
+    "axios": "^1.6.0",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "googleapis": "^140.0.0",
+    "twitter-api-v2": "^1.15.0"
+  }
+}
